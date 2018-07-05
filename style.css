@@ -38,3 +38,77 @@ footer {
 	clear: both;/*float를 초기화해줌*/
 	background-color:  grey;
 }
+/*flex는 안드로이드 linear-layout과 비슷하다*/
+.flex-container{
+	display: flex;
+	flex-direction: row;/*row 기본값 가로, colum 세로로 바뀌*/
+	/*flex-wrap: wrap; wrap 사이즈 줄였을때 떨어짐*/
+	/*justify-content: center;능/*축이라고 생각 정렬이 바뀜 flex-start,center,flex-end,space-between*/
+	/*align-items: stretch;/*세로방향, flex-start, flex-end, center. stretch*/
+	/*align-content: flex-start; y출에 대한 정렬*/
+	height: 10vh;
+	background-color:lightgray;
+
+}
+.flex-item:nth-child(1){
+	flex: 1;/*1:2:1배율로 됨*/
+	order:1;
+}
+.flex-item:nth-child(2){
+	flex: 2;
+	order:2;
+}
+.flex-item:nth-child(3){
+	flex: 1;
+	order:3;
+}
+.flex-item{
+	background: rgba(255,0,0,0.5);
+}
+.flex-item:nth-child(odd){
+	background: rgba(255,255,0,0.5);
+}
+.grid-container{
+	display: grid;
+	/*grid-template-columns: 4fr 6fr; 비율 조절*/
+	/*grid-template-columns: repeat(4, 1fr); 반복 가*/
+	/*grid-template-columns: 200px 1fr; 첫번째꺼는 200px고정 두번째꺼는 늘어남*/
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: minmax(200px,auto);/*최소 200px 확보는 했고 길이에따라 늘어남*/
+	grid-gap: 1rem;
+	/*justify-items:center;/*가로정렬각 아이템 센터정렬:center. 왼쪽:start 오른쪽:end;*/
+	/*align-items:center;/*세로정렬각 아이템 센터정렬:center. 위쪽:start 아래:end;*/
+	background-color:lightgray;
+}
+.grid-item:nth-child(1){
+	grid-column: 1/4; /*1축부터 4축까지합침*/
+}
+.grid-item:nth-child(4){
+	grid-column: 3;
+	grid-row: 2/4; /*1축부터 4축까지합침*/
+}
+.grid-item:nth-child(9){
+	grid-column: 3;
+	grid-row: 3/5; 
+}
+.grid-item:nth-child(5){
+	justify-self: center;
+	align-self: center;
+}
+
+
+.grid-item{
+	background-color:red;
+}
+.grid-item:nth-child(odd){
+	background-color:yellow;
+}
+
+
+
+
+
+
+
+
+

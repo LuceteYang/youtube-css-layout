@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	font-size: 1em;
+}
+h1, p{
+	margin: 0;
+}
+.container {
+	/*이게 없으면 section 사이에 글씨가 있어서 넓이가 100이안됨*/
+	/*max-width: 1000px;*/
+	/*margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;*/
+	background: pink;
+}
+.container:after {
+/*	자식 컴포넌트가 float로 배치했으면
+	부모 엘리멘트가 끝나는 시점에 부모 엘리먼트가 높이를 확보하도록 있으면 가상 컴포넌트를 생성해줘라
+*/	content:'';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.item {
+	float: left;
+	padding: 5%;
+}
+.item-a {
+	width: 30%;
+	background-color: yellow;
+}
+.item-b {
+	width: 50%;
+	background-color: yellowgreen;
+}
+footer {
+	clear: both;/*float를 초기화해줌*/
+	background-color:  grey;
+}
